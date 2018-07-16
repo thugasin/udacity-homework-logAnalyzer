@@ -1,0 +1,8 @@
+getTopAuthor 2
+[('Ursula La Multa', Decimal('512805')), ('Rudolf von Treppenwitz', Decimal('427781'))]
+
+getTopArticle 1
+[('Candidate is jerk, alleges rival', 342102L)]
+
+getAccidentDay
+[(datetime.date(2016, 7, 17),)]

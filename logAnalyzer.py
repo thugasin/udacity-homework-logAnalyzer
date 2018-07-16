@@ -16,8 +16,6 @@ def main():
             print("The argument is not correct.")
     elif (sys.argv[1].lower() == "accidentdays"):
         print(logAnalyzerDb.get_show_stoper_days())
-    elif (sys.argv[1].lower() == "help"):
-        print("")
     else:
         print(sys.argv[1]+' command not found.')
 
