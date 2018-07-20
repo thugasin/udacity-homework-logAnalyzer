@@ -10,10 +10,10 @@ def get_top_popular(top_num):
                    FROM articles LEFT JOIN log 
                    ON log.path = '/article/'||articles.slug
                    GROUP BY articles.title ORDER BY num DESC""")
-    titles = cursor.fetchmany(top_num)
+    results = cursor.fetchmany(top_num)
     conn.commit()
     conn.close()
-    return title
+    return results
 
 
 def get_top_author(top_num):
@@ -30,7 +30,7 @@ def get_top_author(top_num):
     author_result = cursor.fetchmany(top_num)
     conn.commit()
     conn.close()
-    return author_resul
+    return author_result
 
 
 def get_show_stoper_days():
