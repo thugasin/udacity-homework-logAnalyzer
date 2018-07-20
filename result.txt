@@ -1,8 +1,12 @@
-getTopAuthor 2
-[('Ursula La Multa', Decimal('512805')), ('Rudolf von Treppenwitz', Decimal('427781'))]
+getTopAuthor 3
+Ursula La Multa -- 507594 views
+Rudolf von Treppenwitz -- 423457 views
+Anonymous Contributor -- 170098 views
 
-getTopArticle 1
-[('Candidate is jerk, alleges rival', 342102L)]
+getTopArticle 3
+"Candidate is jerk, alleges rival" -- 338647 views
+"Bears love berries, alleges bear" -- 253801 views
+"Bad things gone, say good people" -- 170098 views
 
 getAccidentDay
-[(datetime.date(2016, 7, 17),)]
+2016-07-17 -- 2.3% errors
