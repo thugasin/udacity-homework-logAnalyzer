@@ -10,3 +10,5 @@ getTopArticle 3
 
 getAccidentDay
 2016-07-17 -- 2.3% errors
+
+reportall
