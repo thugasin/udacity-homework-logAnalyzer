@@ -37,7 +37,7 @@ def report_accident_days():
     try:
         results = logAnalyzerDb.get_show_stoper_days()
         for date, errorRate in results:
-            print('{} -- {:.1f}% errors'.format(date, errorRate))
+            print('{} -- {}% errors'.format(date, errorRate))
     except (Exception) as error:
         print(error)
 
