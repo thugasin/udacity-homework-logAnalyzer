@@ -61,5 +61,6 @@ def report_top_articles(num):
     except (Exception) as error:
         print(error)
 
+
 if __name__ == "__main__":
     main()

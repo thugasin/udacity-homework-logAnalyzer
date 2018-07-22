@@ -4,11 +4,11 @@ import psycopg2
 DBNAME = "news"
 
 
-def execute_query(cmd):
+def execute_query(cmd, data=[]):
     """ common function for psql query """
     conn = psycopg2.connect(database=DBNAME)
     cursor = conn.cursor()
-    cursor.execute(cmd)
+    cursor.execute(cmd, data)
     result = cursor.fetchall()
     conn.close()
     return result
@@ -25,8 +25,9 @@ def get_top_popular(top_num):
              ) AS log
              ON log.path = '/article/' || articles.slug
              ORDER BY views DESC
-             LIMIT {}""".format(top_num)
-    return execute_query(cmd)
+             LIMIT %s"""
+    data = [top_num, ]
+    return execute_query(cmd, data)
 
 
 def get_top_author(top_num):
@@ -49,8 +50,9 @@ def get_top_author(top_num):
                     AS article_result
                     GROUP BY article_result.author) as author_result
                     ON authors.id = author_result.author
-                    ORDER BY num DESC LIMIT {}""".format(top_num)
-    return execute_query(cmd)
+                    ORDER BY num DESC LIMIT %s"""
+    data = [top_num, ]
+    return execute_query(cmd, data)
 
 
 def get_show_stoper_days():
